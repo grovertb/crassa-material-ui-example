@@ -13,13 +13,24 @@ const Home = loadable(() => import('../containers/Home'), {
   fallback: <Loading />
 })
 
-export default history => {
-  const pathUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : '/'
+const User = loadable(() => import('../containers/User'), {
+  fallback: <Loading />
+})
 
+export default history => {
   return (
     <ConnectedRouter history={history}>
       <Dashboard history={history}>
-        <Route component={Home} exact path={pathUrl} />
+        <Route
+          component={Home}
+          exact
+          path='/'
+          strict />
+        <Route
+          component={User}
+          exact
+          path='/user'
+          strict />
       </Dashboard>
     </ConnectedRouter>
   )

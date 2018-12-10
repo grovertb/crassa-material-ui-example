@@ -4,7 +4,6 @@ import { renderToString } from 'react-dom/server'
 import { SheetsRegistry } from 'jss'
 import JssProvider from 'react-jss/lib/JssProvider'
 
-import CssBaseline from '@material-ui/core/CssBaseline'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName'
@@ -23,7 +22,6 @@ export const setRenderUniversal = (html, app, store) => {
     <JssProvider generateClassName={generateClassName} registry={sheetsRegistry}>
       <MuiThemeProvider sheetsManager={sheetsManager} theme={theme}>
         <Fragment>
-          <CssBaseline />
           {app}
         </Fragment>
       </MuiThemeProvider>

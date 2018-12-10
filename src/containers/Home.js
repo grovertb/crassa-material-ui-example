@@ -133,4 +133,4 @@ export default connect(
   {
     updateTheme: themeReducer.creators.updateTheme
   }
-)(withStyles(styles)(Home))
+)(withStyles(styles, { name: 'Home' })(Home))

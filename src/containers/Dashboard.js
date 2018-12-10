@@ -6,6 +6,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
+import Footer from 'components/Footer'
+
 class Dashboard extends Component {
   render() {
     return (
@@ -20,7 +22,8 @@ class Dashboard extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        {this.props.children}
+        <main>{this.props.children}</main>
+        <Footer />
       </Fragment>
     )
   }
